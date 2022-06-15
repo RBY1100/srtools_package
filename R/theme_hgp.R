@@ -1,6 +1,3 @@
-sysfonts::font_add_google(name = "Courier Prime", family = "Main")
-showtext::showtext_auto()
-
 #' Henry Gannett Atlas Theme
 #'
 #' @return A graph resembles the 1890 Statistical Atlas from Henry Gannett.
@@ -12,6 +9,9 @@ showtext::showtext_auto()
 #' geom_col() +
 #' theme_hga()
 theme_hga <- function(){
+  sysfonts::font_add_google(name = "Courier Prime", family = "Main")
+  showtext::showtext_auto()
+
   font <- "Main"
 
   theme_minimal() %+replace%
