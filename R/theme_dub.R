@@ -27,12 +27,13 @@ theme_dub <- function(){
 
       plot.title = element_text(
         family = font,
-        size = 7,
+        size = 18,
         face = 'bold'),
 
       plot.subtitle = element_text(
         family = font,
-        size = 7),
+        size = 14,
+        face = 'italic'),
 
       plot.tag = element_text(
         family = font,
