@@ -1,14 +1,14 @@
 #' Du Bois Theme
 #'
-#' @return A graph resembles the 1890 Statistical Atlas from Henry Gannett.
+#' @return A graph resembles graphs and tables created by Du Bois.
 #' @export
 #'
 #' @examples library("ggplot2")
 #'
 #' ggplot(data = Titanic, aes(x = Class, y = Freq, fill = Survived)) +
 #' geom_col() +
-#' theme_hga()
-theme_hga <- function(){
+#' theme_dub()
+theme_dub <- function(){
   sysfonts::font_add_google(name = "Puritan", family = "Main")
   showtext::showtext_auto()
 
