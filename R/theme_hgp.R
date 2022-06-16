@@ -1,6 +1,9 @@
 #' Henry Gannett Atlas Theme
 #'
-#' @return A graph resembles the 1890 Statistical Atlas from Henry Gannett.
+#' @return A figure that resembles the 1890 Statistical Atlas from Henry Gannett.
+#'
+#' @param colour The background color for the figure; defaults to #f1d9b5
+#'
 #' @export
 #'
 #' @examples library("ggplot2")

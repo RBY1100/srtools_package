@@ -1,6 +1,8 @@
 #' Du Bois Theme
 #'
-#' @return A graph resembles graphs and tables created by Du Bois.
+#' @return A figure that resembles graphs and tables created by Du Bois.
+#'
+#' @param colour The background color for the figure; defaults to #dec8b1
 #' @export
 #'
 #' @examples library("ggplot2")

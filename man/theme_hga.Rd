@@ -4,10 +4,13 @@
 \alias{theme_hga}
 \title{Henry Gannett Atlas Theme}
 \usage{
-theme_hga()
+theme_hga(colour = "#f1d9b5")
+}
+\arguments{
+\item{colour}{The background color for the figure; defaults to #f1d9b5}
 }
 \value{
-A graph resembles the 1890 Statistical Atlas from Henry Gannett.
+A figure that resembles the 1890 Statistical Atlas from Henry Gannett.
 }
 \description{
 Henry Gannett Atlas Theme

@@ -4,10 +4,13 @@
 \alias{theme_dub}
 \title{Du Bois Theme}
 \usage{
-theme_dub()
+theme_dub(colour = "#dec8b1")
+}
+\arguments{
+\item{colour}{The background color for the figure; defaults to #dec8b1}
 }
 \value{
-A graph resembles graphs and tables created by Du Bois.
+A figure that resembles graphs and tables created by Du Bois.
 }
 \description{
 Du Bois Theme

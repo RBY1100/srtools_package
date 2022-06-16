@@ -11,6 +11,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     ggplot2,
+    readxl,
     showtext,
     sysfonts
 RoxygenNote: 7.1.1
