@@ -8,7 +8,7 @@
 #' ggplot(data = Titanic, aes(x = Class, y = Freq, fill = Survived)) +
 #' geom_col() +
 #' theme_dub()
-theme_dub <- function(){
+theme_dub <- function(colour = "#dec8b1"){
   sysfonts::font_add_google(name = "Puritan", family = "Main")
   showtext::showtext_auto()
 
@@ -22,8 +22,8 @@ theme_dub <- function(){
       panel.grid.major = element_line(color = "black", size = .25),
       panel.grid.minor = element_blank(),
 
-      panel.background = element_rect(color="black", fill= "#dec8b1"),
-      plot.background = element_rect(fill = "#dec8b1"),
+      panel.background = element_rect(color="black", fill = colour),
+      plot.background = element_rect(fill = colour),
 
       plot.title = element_text(
         family = font,

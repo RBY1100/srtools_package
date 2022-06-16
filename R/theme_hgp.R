@@ -8,7 +8,7 @@
 #' ggplot(data = Titanic, aes(x = Class, y = Freq, fill = Survived)) +
 #' geom_col() +
 #' theme_hga()
-theme_hga <- function(){
+theme_hga <- function(colour = "#f1d9b5"){
   sysfonts::font_add_google(name = "Courier Prime", family = "Main")
   showtext::showtext_auto()
 
@@ -22,8 +22,8 @@ theme_hga <- function(){
       panel.grid.major = element_line(color = "black", size = .25),
       panel.grid.minor = element_blank(),
 
-      panel.background = element_rect(color="black", fill= "#f1d9b5"),
-      plot.background = element_rect(fill = "#f1d9b5"),
+      panel.background = element_rect(color="black", fill= colour),
+      plot.background = element_rect(fill = colour),
 
       plot.title = element_text(
         family = font,
