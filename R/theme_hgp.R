@@ -8,9 +8,14 @@
 #'
 #' @examples library("ggplot2")
 #'
-#' ggplot(data = Titanic, aes(x = Class, y = Freq, fill = Survived)) +
-#' geom_col() +
-#' theme_hga()
+#'ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+#'geom_col(color = "black", fill = "black", width = 0.45, ) +
+#'labs(title = "POPULATION OF EACH STATE",
+#'     subtitle = "(Population in 2021)",
+#'     x = "Population",
+#'     y = "State") +
+#'theme_hga()
+
 theme_hga <- function(colour = "#f1d9b5"){
   sysfonts::font_add_google(name = "Courier Prime", family = "Main")
   showtext::showtext_auto()

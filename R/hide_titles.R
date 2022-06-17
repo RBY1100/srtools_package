@@ -1,9 +1,9 @@
-#' Hide Axis Text
+#' Hide Titles
 #'
-#' @param hide The axis text you wish to hide; options include "x", "y", and "both"; default is "both"
+#' @param hide Designate whether to hide the title, subtitle, or both; options include "title", "sub", and "both"; default is "both"
 #' @param colour The background color of the figure being created; default is "white"
 #'
-#' @return A figure with the chosen axis text hidden without changing the figure dimensions.
+#' @return A figure with the title/subtitle hidden without changing the figure dimensions.
 #' @export
 #'
 #' @examples library("ggplot2")
@@ -14,7 +14,7 @@
 #'     subtitle = "(Population in 2021)",
 #'     x = "Population",
 #'     y = "State") +
-#'hide _axistext()
+#'hide_titles()
 #'
 #' @examples
 #'ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
@@ -23,17 +23,17 @@
 #'     subtitle = "(Population in 2021)",
 #'     x = "Population",
 #'     y = "State") +
-#'hide _axistext("x")
+#'hide_titles("sub")
 
-hide_axistext <- function(hide = "both", colour = "white"){
+hide_titles <- function(hide = "both", colour = "white"){
 
-  if(hide == "x"){
-    theme(axis.text.x = element_text(color=colour))
-  } else if(hide == "y"){
-      theme(axis.text.y = element_text(color=colour))
-    } else if(hide == "both"){
-    theme(axis.text.x = element_text(color=colour),
-          axis.text.y = element_text(color=colour)
+  if(hide == "title"){
+    theme(plot.title = element_text(color=colour))
+  } else if(hide == "sub"){
+    theme(plot.subtitle = element_text(color=colour))
+  } else if(hide == "both"){
+    theme(plot.title = element_text(color=colour),
+          plot.subtitle = element_text(color=colour)
     )
-}
+  }
 }
