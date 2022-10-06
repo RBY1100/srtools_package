@@ -1,0 +1,353 @@
+\nonstopmode{}
+\documentclass[a4paper]{book}
+\usepackage[times,inconsolata,hyper]{Rd}
+\usepackage{makeidx}
+\usepackage[utf8]{inputenc} % @SET ENCODING@
+% \usepackage{graphicx} % @USE GRAPHICX@
+\makeindex{}
+\begin{document}
+\chapter*{}
+\begin{center}
+{\textbf{\huge Package `srtools'}}
+\par\bigskip{\large \today}
+\end{center}
+\inputencoding{utf8}
+\ifthenelse{\boolean{Rd@use@hyper}}{\hypersetup{pdftitle = {srtools: What the Package Does (Title Case)}}}{}
+\begin{description}
+\raggedright{}
+\item[Type]\AsIs{Package}
+\item[Title]\AsIs{What the Package Does (Title Case)}
+\item[Version]\AsIs{0.1.0}
+\item[Author]\AsIs{Who wrote it}
+\item[Maintainer]\AsIs{The package maintainer }\email{yourself@somewhere.net}\AsIs{}
+\item[Description]\AsIs{More about what it does (maybe more than one line)
+Use four spaces when indenting paragraphs within the Description.}
+\item[License]\AsIs{What license is it under?}
+\item[Encoding]\AsIs{UTF-8}
+\item[Imports]\AsIs{ggplot2, readxl, showtext, sysfonts}
+\item[RoxygenNote]\AsIs{7.2.1}
+\item[NeedsCompilation]\AsIs{no}
+\end{description}
+\Rdcontents{\R{} topics documented:}
+\inputencoding{utf8}
+\HeaderA{hide}{Hide Chosen Figure Elements}{hide}
+%
+\begin{Description}\relax
+Hide Chosen Figure Elements
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+hide(hidden = c("none"), colour = "white")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{hidden}] A list that designates what aspects of a figure to conceal. Available options are "all", "xtext", "ytext", "xtitle", "ytitle", "title", "subtitle", "tag", "caption", "xtick" and "ytick". "sub" and "cap" can also be used in place of "subtitle" and "caption" respectively. Any number of these options in any order can be added into the list however, the argument must be a list; default is a list containing only the value "none"
+
+\item[\code{colour}] The background color of the figure being created; default is "white"
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure with the chosen figure elements hidden without changing the figure dimensions.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    tag = "tag example",
+    caption = "caption example",
+    x = "Population",
+    y = "State") +
+    hide("cap", "xtext", "xtitle", "title")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    tag = "tag example",
+    caption = "caption example",
+    x = "Population",
+    y = "State") +
+    hide("caption", "sub", "title", "tag", "xtick", "ytick")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    tag = "tag example",
+    caption = "caption example",
+    x = "Population",
+    y = "State") +
+    hide("all")
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{hide\_axistext}{Hide Axis Text}{hide.Rul.axistext}
+%
+\begin{Description}\relax
+Hide Axis Text
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+hide_axistext(hide = "both", colour = "white")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{hide}] The axis text you wish to hide; options include "x", "y", and "both"; default is "both"
+
+\item[\code{colour}] The background color of the figure being created; default is "white"
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure with the chosen axis text hidden without changing the figure dimensions.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+hide _axistext()
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+hide _axistext("x")
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{hide\_axistitle}{Hide Axis Title}{hide.Rul.axistitle}
+%
+\begin{Description}\relax
+Hide Axis Title
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+hide_axistitle(hide = "both", colour = "white")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{hide}] The axis title you wish to hide; options include "x", "y", and "both"; default is "both"
+
+\item[\code{colour}] The background color of the figure being created; default is "white"
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure with the chosen axis title hidden without changing the figure dimensions.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+hide _axistitle()
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+hide _axistitle("x")
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{hide\_misctext}{Hide Misc Text}{hide.Rul.misctext}
+%
+\begin{Description}\relax
+Hide Misc Text
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+hide_misctext(hide = "both", colour = "white")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{hide}] Designate whether to hide the plots tag, caption, or both; options include "tag", "cap", and "both"; default is "both"
+
+\item[\code{colour}] The background color of the figure being created; default is "white"
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure with the tag/caption hidden without changing the figure dimensions.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    tag = "tag example",
+    caption = "caption example",
+    x = "Population",
+    y = "State") +
+hide_misctext()
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    tag = "tag example",
+    caption = "caption example",
+    x = "Population",
+    y = "State") +
+hide_misctext("cap")
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{hide\_titles}{Hide Titles}{hide.Rul.titles}
+%
+\begin{Description}\relax
+Hide Titles
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+hide_titles(hide = "both", colour = "white")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{hide}] Designate whether to hide the title, subtitle, or both; options include "title", "sub", and "both"; default is "both"
+
+\item[\code{colour}] The background color of the figure being created; default is "white"
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure with the title/subtitle hidden without changing the figure dimensions.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+hide_titles()
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+hide_titles("sub")
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{theme\_dub}{Du Bois Theme}{theme.Rul.dub}
+%
+\begin{Description}\relax
+Du Bois Theme
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+theme_dub(colour = "#dec8b1")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{colour}] The background color for the figure; defaults to \#dec8b1
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure that resembles graphs and tables created by Du Bois.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+theme_dub()
+\end{ExampleCode}
+\end{Examples}
+\inputencoding{utf8}
+\HeaderA{theme\_hga}{Henry Gannett Atlas Theme}{theme.Rul.hga}
+%
+\begin{Description}\relax
+Henry Gannett Atlas Theme
+\end{Description}
+%
+\begin{Usage}
+\begin{verbatim}
+theme_hga(colour = "#f1d9b5")
+\end{verbatim}
+\end{Usage}
+%
+\begin{Arguments}
+\begin{ldescription}
+\item[\code{colour}] The background color for the figure; defaults to \#f1d9b5
+\end{ldescription}
+\end{Arguments}
+%
+\begin{Value}
+A figure that resembles the 1890 Statistical Atlas from Henry Gannett.
+\end{Value}
+%
+\begin{Examples}
+\begin{ExampleCode}
+library("ggplot2")
+
+ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
+geom_col(color = "black", fill = "black", width = 0.45, ) +
+labs(title = "POPULATION OF EACH STATE",
+    subtitle = "(Population in 2021)",
+    x = "Population",
+    y = "State") +
+theme_hga()
+\end{ExampleCode}
+\end{Examples}
+\printindex{}
+\end{document}
