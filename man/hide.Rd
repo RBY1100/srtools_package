@@ -2,12 +2,12 @@
 % Please edit documentation in R/hide.R
 \name{hide}
 \alias{hide}
-\title{Hide}
+\title{Hide Chosen Figure Elements}
 \usage{
 hide(hidden = c("none"), colour = "white")
 }
 \arguments{
-\item{hidden}{A list that designates what aspect of a figure to conceal. Available options are "all", "xtext", "ytext", "xtitle", "ytitle", "title", "subtitle", "tag", "caption", "xtick" and "ytick". "sub" and "cap" can also be used in place of "subtitle" and "caption" respectively. These options can be added in any order into the hidden list however, the variable must be a list; default is "none"}
+\item{hidden}{A list that designates what aspects of a figure to conceal. Available options are "all", "xtext", "ytext", "xtitle", "ytitle", "title", "subtitle", "tag", "caption", "xtick" and "ytick". "sub" and "cap" can also be used in place of "subtitle" and "caption" respectively. Any number of these options in any order can be added into the list however, the argument must be a list; default is a list containing only the value "none"}
 
 \item{colour}{The background color of the figure being created; default is "white"}
 }
@@ -15,7 +15,7 @@ hide(hidden = c("none"), colour = "white")
 A figure with the chosen figure elements hidden without changing the figure dimensions.
 }
 \description{
-Hide
+Hide Chosen Figure Elements
 }
 \examples{
 library("ggplot2")
@@ -28,7 +28,7 @@ labs(title = "POPULATION OF EACH STATE",
     caption = "caption example",
     x = "Population",
     y = "State") +
-hide("cap", "xtext", "xtitle", "title")
+    hide("cap", "xtext", "xtitle", "title")
 
 ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
 geom_col(color = "black", fill = "black", width = 0.45, ) +
@@ -38,7 +38,7 @@ labs(title = "POPULATION OF EACH STATE",
     caption = "caption example",
     x = "Population",
     y = "State") +
-hide("caption", "sub", "title", "tag", "xtick", "ytick")
+    hide("caption", "sub", "title", "tag", "xtick", "ytick")
 
 ggplot(states, aes(x = Pop, y = fct_rev(fct_inorder(State))), fill = NA) +
 geom_col(color = "black", fill = "black", width = 0.45, ) +
@@ -48,5 +48,5 @@ labs(title = "POPULATION OF EACH STATE",
     caption = "caption example",
     x = "Population",
     y = "State") +
-hide("all")
+    hide("all")
 }

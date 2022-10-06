@@ -14,4 +14,4 @@ Imports:
     readxl,
     showtext,
     sysfonts
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
